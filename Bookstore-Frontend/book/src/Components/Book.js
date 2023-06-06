@@ -15,10 +15,12 @@ export default function Book() {
     //console.log(book.results) 
 
   return (
-    <div>
-         {book.map((b) => { 
-            return <BookDisplay image={b.book_image} author={b.author} url={b.book_uri} description={b.description}/>  
-         })}
+    <div className='container p-4'> 
+        <div className='row'>
+            {book.map((b) => { 
+                return <BookDisplay amazon={b.amazon_product_url} image={b.book_image} author={b.author} description={b.description}/>  
+            })}
+         </div>
     </div>
   )
 }
