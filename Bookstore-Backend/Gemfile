@@ -33,7 +33,6 @@ gem "faker", "~> 2.18"
 # Rack middleware. Used specifically for parsing the request body into params.
 # https://github.com/rack/rack-contrib
 gem "rack-contrib", "~> 2.3"
-source "https://rubygems.org"
 
 # Used to make network requests
 # https://github.com/rest-client/rest-client
@@ -43,3 +42,11 @@ gem "rest-client", "~> 2.1"
 # More Rack middleware! Used to handle CORS requests
 # https://github.com/cyu/rack-cors
 gem "rack-cors", "~> 1.1"
+
+# A DSL for quickly creating web applications
+# https://github.com/sinatra/sinatra
+gem "sinatra", "~> 2.1"
+
+# A fast and simple web server
+# https://github.com/macournoyer/thin
+gem "thin", "~> 1.8"

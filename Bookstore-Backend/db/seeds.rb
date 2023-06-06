@@ -2,7 +2,8 @@ require 'net/http'
 require 'json'
 
 puts "Deleting old data..."
-Book.destroy_all
+
+Review.destroy_all
 User.destroy_all
 
 # Reset auto-increment sequence for User table
@@ -11,7 +12,7 @@ ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 
 ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name = 'book'")
 
 puts "Seeding ..."
-url = URI.parse("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=2j4LI82UJRjtAiP5Z4NQG0hQWp4BoaCv")
+url = URI.parse("https://api.nytimes.com/svc/books/v3/lists/current/young-adult.json?api-key=2j4LI82UJRjtAiP5Z4NQG0hQWp4BoaCv")
 
 http = Net::HTTP.new(url.host, url.port)
 http.use_ssl = true
