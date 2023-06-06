@@ -32,7 +32,9 @@ if response.code == "200"
           title: book["title"],
           author: book["author"],
           book_image: book["book_image"],
-          amazon_product_url: book["amazon_product_url"]
+          amazon_product_url: book["amazon_product_url"],
+          publisher: book["publisher"],
+          description: book["description"]
         )
       
         # Create a review for each book
