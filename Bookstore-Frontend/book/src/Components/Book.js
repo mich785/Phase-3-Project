@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import BookDisplay from './BookDisplay'
+import Header from './Header'
+import Cart from './Cart'
 
 export default function Book() {
     const [book,setBook] = useState([])  
@@ -14,13 +16,20 @@ export default function Book() {
     },[] )
     //console.log(book.results) 
 
+    function handleCart(id){
+        console.log(id) 
+    }
+
   return (
     <div className='container p-4'> 
-        <div className='row'>
+            <Header/>  
+        <div className='row'> 
             {book.map((b) => { 
-                return <BookDisplay amazon={b.amazon_product_url} image={b.book_image} author={b.author} description={b.description}/>  
+                return <BookDisplay handleCart={handleCart} id={b.rank} amazon={b.amazon_product_url} image={b.book_image} author={b.author} description={b.description}/>  
             })}
          </div>
+
+         <Cart />
     </div>
   )
 }
