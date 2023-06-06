@@ -4,6 +4,11 @@ source "https://rubygems.org"
 # https://guides.rubyonrails.org/active_record_basics.html
 gem "activerecord", "~> 6.1"
 
+# A DSL for quickly creating web applications
+# https://github.com/sinatra/sinatra
+gem "sinatra", "~> 2.1"
+
+
 # Configures common Rake tasks for working with Active Record
 # https://github.com/sinatra-activerecord/sinatra-activerecord
 gem "sinatra-activerecord"
@@ -43,3 +48,4 @@ gem "rest-client", "~> 2.1"
 # More Rack middleware! Used to handle CORS requests
 # https://github.com/cyu/rack-cors
 gem "rack-cors", "~> 1.1"
+
