@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_06_091411) do
+ActiveRecord::Schema.define(version: 2023_06_06_115127) do
 
   create_table "books", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "book_image"
+    t.string "amazon_product_url"
+    t.string "description"
+    t.string "publisher"
   end
 
   create_table "reviews", force: :cascade do |t|
