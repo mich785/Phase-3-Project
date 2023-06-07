@@ -52,7 +52,7 @@ Key Features of the Bookshelf App:
       ``npm start``
 
 ## Approach
-   The application was built using the React.js library, which allowed for efficient component-based development and state management. The back-end makes use of an online public server to fetch books data and display it to the user. pp serves as a comprehensive tool for book lovers, offering a seamless experience for exploring, reviewing, and purchasing books. Whether users are seeking recommendations or want to share their own insights, the app provides a user-friendly platform to engage with the literary world.
+   The application was built using the React.js library, which allowed for efficient component-based development and state management. The back-end makes use of an online public server to fetch books data and display it to the user.The app serves as a comprehensive tool for book lovers, offering a seamless experience for exploring, reviewing, and purchasing books. Whether users are seeking recommendations or want to share their own insights, the app provides a user-friendly platform to engage with the literary world.
 
 ## Status
    The application is fully functional and ready for use. However, further improvements and features could be added in the future, books saving and sharing, and social media integration.
