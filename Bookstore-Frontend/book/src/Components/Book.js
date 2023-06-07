@@ -5,7 +5,8 @@ import Cart from './Cart'
 import BookSearch from './BookSearch'
 
 export default function Book() {
-    const [book,setBook] = useState([])  
+    const [book,setBook] = useState([]) 
+    const [cart,setCart] = useState([]) 
 
     useEffect(() => {
         fetch("http://localhost:9292/")
@@ -18,7 +19,17 @@ export default function Book() {
     //console.log(book.results) 
 
     function handleCart(id){
-        console.log(id) 
+        fetch(`http://localhost:9292/books/${id}`)  
+        .then(response => response.json())
+        .then(data => {
+            addCart(data) 
+            console.log(data) 
+        }) 
+    }
+
+    function addCart(newItem){
+        setCart([...cart,newItem]) 
+
     }
 
     function handleReviews(id){
@@ -27,7 +38,10 @@ export default function Book() {
 
   return (
     <div className='container p-4'> 
-            <Header/>  
+            <Header/> 
+            {cart.map((b) => {
+                return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>
+            })} 
             <BookSearch />
         <div className='row'> 
             {book.map((b) => { 
