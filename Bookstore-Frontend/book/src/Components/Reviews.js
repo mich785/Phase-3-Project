@@ -6,25 +6,24 @@ import { useNavigate } from "react-router-dom";
 function Reviews() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [bookId, setBookId] = useState(bookId);
+    const [bookId, setBookId] = useState();
     const [review, setReview] = useState("");
     const [reviews, setReviews] = useState([]);
-    const bookid = useParams();
     const navigate = useNavigate();
+    const { bookId: paramBookId } = useParams();
+
 
     useEffect(() => {
-        // Fetch user data from database 
-        fetch("http://localhost:9292/")
+        // Fetch book data from database 
+        fetch(`http://localhost:9292/book/${paramBookId}`)
             .then((response) => response.json())
             .then((data) => {
-                // setName(data.name);
-                // setEmail(data.email);
                 setBookId(data.id);
             })
             .catch((error) => {
-                console.log("Error retrieving user data", error);
+                console.log("Error retrieving book data", error);
             });
-    }, []);
+    }, [paramBookId]);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -36,7 +35,7 @@ function Reviews() {
         } else {
             console.log("Please provide all required information.");
         }
-        navigate("/books")
+        navigate("/book")
     }
 
     function handleLikes(index) {
@@ -85,7 +84,7 @@ function Reviews() {
 
         <
         input type = "number"
-        placeholder = "Book ID ..."
+        // placeholder="Book ID ..."
         value = { bookId }
         onChange = {
             (e) => setBookId(e.target.value) }

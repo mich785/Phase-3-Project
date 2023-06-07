@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import BookDisplay from './BookDisplay'
 import Header from './Header'
 import Cart from './Cart'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 export default function Book() {
     const [book, setBook] = useState([])
     const navigate = useNavigate();
+    const { id: bookId } = useParams();
 
     useEffect(() => {
             fetch("http://localhost:9292/")
@@ -25,7 +26,7 @@ export default function Book() {
     function handleReviews(id) {
         console.log(id)
         navigate("/reviews")
-        book_id = id
+
     }
 
     return ( <
