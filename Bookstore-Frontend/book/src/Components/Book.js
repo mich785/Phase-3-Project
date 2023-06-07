@@ -4,20 +4,20 @@ import Header from './Header'
 import Cart from './Cart'
 
 export default function Book() {
-    const [book,setBook] = useState([])  
+    const [book,setBook] = useState([]) 
 
     useEffect(() => {
         fetch("https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=USLX52voDPN51lzOHNAI3HC5jGGKxcSG")
         .then(response => response.json())
         .then(data => {
             setBook(data.results.books) 
-            console.log(data.results.books) 
+            console.log(data)  
         })  
     },[] )
     //console.log(book.results) 
 
-    function handleCart(id){
-        console.log(id) 
+    function handleCart(){
+        console.log() 
     }
 
   return (
