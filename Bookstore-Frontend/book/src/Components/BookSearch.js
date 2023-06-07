@@ -5,7 +5,8 @@ function BookSearch() {
   const [searchInputText, setSearchInputText] = useState("");
   const [searchType, setSearchType] = useState("title");
 
-  const handleSearch = () => {
+  const handleSearch = (e) => {
+    e.preventDefault() 
     let searchApi = "";
 
     if (searchType === "title") {
@@ -18,7 +19,10 @@ function BookSearch() {
 
     fetch(searchApi)
       .then((response) => response.json())
-      .then((data) => setBooks(data))
+      .then((data) => {
+          setBooks(data)
+          console.log(data) 
+      })
       .catch((error) => console.error(error));
   };
 
