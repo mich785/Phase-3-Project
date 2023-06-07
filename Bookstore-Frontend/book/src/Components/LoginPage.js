@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "../Styles/Login.css"
 
 function LoginPage() {
     const [email, setEmail] = useState("");
@@ -14,14 +14,11 @@ function LoginPage() {
             .then((data) => {
                 const users = data.users;
 
-
                 const existingUser = users.find((user) => user.email === email);
 
                 if (existingUser) {
-
                     console.log("Login successful");
                 } else {
-
                     console.log("Invalid login email");
                 }
             })
@@ -34,12 +31,14 @@ function LoginPage() {
     }
 
     return ( <
-        div >
+        div className = "login-container" >
+        <
+        div className = "login-form" >
         <
         form onSubmit = { handleSubmit }
         className = "form" >
         <
-        p > Welcome back!Please log in . < /p> <
+        p className = "info" > Your session Expired! < /p> <
         h3 > Login < /h3> <
         label >
         <
@@ -67,7 +66,10 @@ function LoginPage() {
         /div> <
         /form> <
         /div>
-    );
+    ); <
+    /div>
+
+)
 }
 
 export default LoginPage;

@@ -1,11 +1,21 @@
 import React from "react";
 import UserDetails from "./UserDetails";
 
-const SignUp = () => {
+function SignUp() {
     return ( <
         div >
         <
-        h2 > Sign Up < /h2> <
+        h2 > Sign Up Page < /h2> <
+        hr / >
+        <
+        br / >
+        <
+        br / >
+        <
+        br / >
+        <
+        br / >
+        <
         UserDetails / >
         <
         /div>

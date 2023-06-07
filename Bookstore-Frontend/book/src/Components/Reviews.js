@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../Styles/Reviews.css";
 
 function Reviews() {
     const [name, setName] = useState("");
@@ -8,7 +9,7 @@ function Reviews() {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        // Fetch user data from db.json
+        // Fetch user data from database 
         fetch("path/to/db.json")
             .then((response) => response.json())
             .then((data) => {

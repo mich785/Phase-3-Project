@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-// import {useNavigate } from "react-router-dom";
+import SignUp from "./SignUp";
+import { useNavigate } from "react-router-dom";
+import "../Styles/UserDetails.css"
 
 function UserDetails() {
     const [name, setName] = useState("");
@@ -7,7 +9,7 @@ function UserDetails() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [mobile, setMobile] = useState("");
-    //   const navigate= useNavigate();
+    const navigate = useNavigate();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -46,7 +48,7 @@ function UserDetails() {
         setUserName("");
         setEmail("");
 
-        // navigate("/login");
+        navigate("/");
     }
 
     //   function handleNull() {
@@ -64,30 +66,34 @@ function UserDetails() {
     return ( <
         div >
         <
+        div className = "signup-container" >
+        <
+        div className = "signup-form" >
+        <
         form onSubmit = { handleSubmit }
         className = "form" >
         <
         p > Let 's get you started</p> <
         h3 > Register Your Account < /h3> {
             /* <label>
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter your name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </label> */
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Enter your name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                                </label> */
         } {
             /* <label>
-                      <input
-                        type="text"
-                        name="dateOfBirth"
-                        placeholder="Enter your date of birth"
-                        value={dateOfBirth}
-                        onChange={(e) => setDateOfBirth(e.target.value)}
-                      />
-                    </label> */
+                                <input
+                                    type="text"
+                                    name="dateOfBirth"
+                                    placeholder="Enter your date of birth"
+                                    value={dateOfBirth}
+                                    onChange={(e) => setDateOfBirth(e.target.value)}
+                                />
+                                </label> */
         } <
         label >
         <
@@ -124,6 +130,8 @@ function UserDetails() {
         button type = "submit" > Submit < /button> <
         /div> <
         /form> <
+        /div> <
+        /div> <
         /div>
     );
 }
