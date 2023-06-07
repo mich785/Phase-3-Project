@@ -75,4 +75,19 @@ class ApplicationController < Sinatra::Base
     user.destroy
     user.to_json
   end
+  
+    get '/books' do
+  if params[:title]
+    books = Book.where("lower(title) LIKE ?", "%#{params[:title].downcase}%")
+  elsif params[:author]
+    books = Book.where("lower(author) LIKE ?", "%#{params[:author].downcase}%")
+  elsif params[:publisher]
+    books = Book.where("lower(publisher) LIKE ?", "%#{params[:publisher].downcase}%")
+  else
+    books = Book.all
+  end
+
+  books.to_json(only: [:id, :title, :author, :publisher, :book_image])
+end
+
 end
