@@ -20,12 +20,16 @@ export default function Book() {
         console.log(id) 
     }
 
+    function handleReviews(id){
+        console.log(id) 
+    }
+
   return (
     <div className='container p-4'> 
             <Header/>  
         <div className='row'> 
             {book.map((b) => { 
-                return <BookDisplay handleCart={handleCart} id={b.id} image={b.book_image} author={b.author} title={b.title} />  
+                return <BookDisplay handleReviews={handleReviews} handleCart={handleCart} id={b.id} image={b.book_image} author={b.author} title={b.title} />  
             })}
          </div>
 
