@@ -37,8 +37,8 @@
     color: #fff;
     cursor: pointer;
     transition: all 1s;
-    color: lightslategray;
-    background-color: rgb(13, 13, 58);
+    color: black;
+    background-color: rgb(9, 214, 146);
 }
 
 .signup-form p {

@@ -11,11 +11,14 @@ function Home() {
         <
         br / >
         <
-        h1 > SOMA BOOKS < /h1> <
+        h1 > Booknest < /h1> <
         hr / >
         <
         h1 > Welcome to the Home Page < /h1>
 
+        b < br / >
+        <
+        br / >
         <
         LoginPage / >
         <

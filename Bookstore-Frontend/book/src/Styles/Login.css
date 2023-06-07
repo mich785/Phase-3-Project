@@ -37,8 +37,8 @@
     color: #FFFFFF;
     cursor: pointer;
     transition: all 1s;
-    color: lightslategray;
-    background-color: rgb(13, 13, 58);
+    color: #FFFFFF;
+    background-color: rgb(9, 214, 146);
 }
 
 .login-form p {

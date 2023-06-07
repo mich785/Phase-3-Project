@@ -22,7 +22,7 @@ function UserDetails() {
             mobile: mobile,
         };
 
-        fetch("", {
+        fetch("http://localhost:9292", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

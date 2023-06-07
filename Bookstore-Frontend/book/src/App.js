@@ -25,7 +25,7 @@ function App() {
         Route path = "/"
         element = { < Home / > }
         />  <
-        Route path = "/iuyt"
+        Route path = "/reviews"
         element = { < Reviews / > }
         />   <
         Route path = "/book"

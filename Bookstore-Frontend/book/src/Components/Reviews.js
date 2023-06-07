@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "../Styles/Reviews.css";
+import { useNavigate } from "react-router-dom";
 
 function Reviews() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [bookId, setBookId] = useState("");
+    const [bookId, setBookId] = useState(bookId);
     const [review, setReview] = useState("");
     const [reviews, setReviews] = useState([]);
+    const bookid = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch user data from database 
-        fetch("path/to/db.json")
+        fetch("http://localhost:9292/")
             .then((response) => response.json())
             .then((data) => {
-                setName(data.name);
-                setEmail(data.email);
-                setBookId(data.bookId);
+                // setName(data.name);
+                // setEmail(data.email);
+                setBookId(data.id);
             })
             .catch((error) => {
                 console.log("Error retrieving user data", error);
@@ -32,6 +36,7 @@ function Reviews() {
         } else {
             console.log("Please provide all required information.");
         }
+        navigate("/books")
     }
 
     function handleLikes(index) {
@@ -52,7 +57,7 @@ function Reviews() {
         <
         textarea rows = { 5 }
         cols = { 50 }
-        placeholder = "What was your experience?"
+        // placeholder="What was your experience?"
         value = { review }
         onChange = {
             (e) => setReview(e.target.value) }
@@ -60,7 +65,7 @@ function Reviews() {
 
         <
         input type = "text"
-        placeholder = "Your name ..."
+        // placeholder="Your name ..."
         value = { name }
         onChange = {
             (e) => setName(e.target.value) }
@@ -79,15 +84,13 @@ function Reviews() {
         >
 
         <
-        input type = "text"
+        input type = "number"
         placeholder = "Book ID ..."
         value = { bookId }
         onChange = {
             (e) => setBookId(e.target.value) }
-        readOnly // Added readOnly attribute to prevent editing
-        /
+        readOnly /
         >
-
         <
         br / >
         <
