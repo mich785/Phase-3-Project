@@ -13,7 +13,7 @@ export default function Book() {
         .then(response => response.json())
         .then(data => {
             setBook(data) 
-            console.log(data) 
+            // console.log(data) 
         })  
     },[] )
     //console.log(book.results) 
@@ -23,7 +23,7 @@ export default function Book() {
         .then(response => response.json())
         .then(data => {
             addCart(data) 
-            console.log(data) 
+           // console.log(data) 
         }) 
     }
 
@@ -39,9 +39,12 @@ export default function Book() {
   return (
     <div className='container p-4'> 
             <Header/> 
+            <div className='row m-2'> 
+            <h3>Books on Cart</h3>  
             {cart.map((b) => {
-                return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>
+                return <Cart id={b.id} publisher={b.publisher} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>
             })} 
+            </div>
             <BookSearch />
         <div className='row'> 
             {book.map((b) => { 
