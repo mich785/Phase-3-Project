@@ -48,7 +48,7 @@ function UserDetails() {
         setUserName("");
         setEmail("");
 
-        navigate("/");
+        navigate("/login");
     }
 
     //   function handleNull() {

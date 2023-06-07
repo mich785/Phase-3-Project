@@ -4,6 +4,8 @@ import SignUp from "./Components/SignUp";
 import LoginPage from "./Components/LoginPage";
 import Home from "./Components/Home";
 import Reviews from "./Components/Reviews";
+import Book from "./Components/Book"
+import BookDisplay from "./Components/BookDisplay";
 
 function App() {
     return (
@@ -23,11 +25,14 @@ function App() {
         Route path = "/"
         element = { < Home / > }
         />  <
-        Route path = "/reviews"
+        Route path = "/iuyt"
         element = { < Reviews / > }
         />   <
-        Route path = "/books"
-        element = { < Books / > }
+        Route path = "/book"
+        element = { < Book / > }
+        /> <
+        Route path = "/bookdisplay"
+        element = { < BookDisplay / > }
         /> <
         /Routes> <
         /Router>

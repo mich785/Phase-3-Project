@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.landing{
+  background-image: url('https://media.istockphoto.com/id/909115282/photo/filled-books-shelves-and-one-yellow-part-empty.jpg?s=612x612&w=0&k=20&c=EDBRgjsnXezecchG23i1JGkkD9-tpckE_H1G39HQtuk=');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  padding-top:25%; 
+  font-family: 'Gabriela', serif;
+}
+
+#logo{
+  margin-top: 12px;
+  margin-bottom: 24px;
+  width: 70px;
+  height: 70px;
 }
