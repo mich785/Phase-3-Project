@@ -64,6 +64,7 @@ function BookSearch() {
             <div className="card-body">
                 <h5>{book.title}</h5>
                 <p>Author: {book.author}</p>
+                <button type="button" onClick={event =>  window.location.href=`${book.amazon_product_url}`}  className="btn btn-outline-success m-2">Purchase</button>
             </div>
           </div>
         ))}

@@ -7,7 +7,7 @@ import BookSearch from './BookSearch'
 
 export default function Book() {
     const [book,setBook] = useState([]) 
-    const [cart,setCart] = useState([]) 
+    const [cart,setCart] = useState([])
    // const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,6 +20,12 @@ export default function Book() {
     },[] )
     //console.log(book.results) 
 
+   
+    function handleReviews(id){
+        console.log(id)  
+       // navigate("/reviews")
+    }
+
     function handleCart(id){
         fetch(`http://localhost:9292/books/${id}`)  
         .then(response => response.json())
@@ -30,13 +36,7 @@ export default function Book() {
     }
 
     function addCart(newItem){
-        setCart([...cart,newItem]) 
-
-    }
-
-    function handleReviews(id){
-        console.log(id)  
-       // navigate("/reviews")
+        setCart([...cart,newItem])
     }
 
   return (
@@ -48,11 +48,9 @@ export default function Book() {
                 return <BookDisplay handleReviews={handleReviews} handleCart={handleCart} id={b.id} image={b.book_image} author={b.author} title={b.title} />  
             })}
          </div>
-
-         <div className='row m-2'> 
-           <h3>Books on Cart</h3> 
-            <Cart cart={cart}/> 
+        {cart.map((b) => {
+                return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>  
+        })}  
         </div>
-    </div>
   )
 }
