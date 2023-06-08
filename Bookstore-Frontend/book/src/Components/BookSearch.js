@@ -62,7 +62,7 @@ function BookSearch() {
           <div key={book.id} className="col-2 card m-3 d-flex">
             <img src={book.book_image} alt={book.title} className="card-img-top img-thumbnail " />
             <div className="card-body">
-                <h2>{book.title}</h2>
+                <h5>{book.title}</h5>
                 <p>Author: {book.author}</p>
             </div>
           </div>
