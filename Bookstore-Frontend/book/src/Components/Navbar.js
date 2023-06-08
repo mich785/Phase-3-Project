@@ -12,9 +12,6 @@ const Navbar = () => {
           <Link to="/book">Books</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-        <li>
           <Link to="/reviews">Reviews</Link>
         </li>
       </ul>

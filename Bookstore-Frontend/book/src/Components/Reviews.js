@@ -62,7 +62,7 @@ function Reviews() {
           value = { name }
           onChange = {
               (e) => setName(e.target.value) }
-          readOnly // Added readOnly attribute to prevent editing 
+          // Added readOnly attribute to prevent editing 
           />
 
           <input type = "email"
@@ -70,7 +70,7 @@ function Reviews() {
           value = { email }
           onChange = {
               (e) => setEmail(e.target.value) }
-          readOnly // Added readOnly attribute to prevent editing
+           // Added readOnly attribute to prevent editing
           />
 
           <input type = "number"
@@ -78,7 +78,7 @@ function Reviews() {
           value = { bookId }
           onChange = {
               (e) => setBookId(e.target.value) }
-          readOnly />
+           />
           <br/>
           <button type = "submit" className = "submit">Submit </button> 
        </form>

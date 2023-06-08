@@ -13,10 +13,10 @@ function UserDetails() {
 
     function handleSubmit(event) {
         event.preventDefault();
-
+        
         const userDetails = {
-            name: name,
-            dateOfBirth: dateOfBirth,
+           // name: name,
+            //dateOfBirth: dateOfBirth,
             userName: userName,
             email: email,
             mobile: mobile,
