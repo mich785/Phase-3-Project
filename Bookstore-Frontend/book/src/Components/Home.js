@@ -12,7 +12,7 @@ function Home() {
         <hr/>
         <h1> Welcome to the Home Page </h1>
 
-        b <br/> 
+       <br/> 
         <br/>
         <LoginPage/>
         <div className = "alternative" >

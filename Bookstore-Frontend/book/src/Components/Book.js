@@ -42,12 +42,6 @@ export default function Book() {
   return (
     <div className='container p-4'> 
             <Header/> 
-            <div className='row m-2'> 
-            <h3>Books on Cart</h3>  
-            {cart.map((b) => {
-                return <Cart id={b.id} publisher={b.publisher} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>
-            })} 
-            </div>
             <BookSearch />
         <div className='row'> 
             {book.map((b) => { 
@@ -55,7 +49,10 @@ export default function Book() {
             })}
          </div>
 
-         <Cart />
+         <div className='row m-2'> 
+           <h3>Books on Cart</h3> 
+            <Cart cart={cart}/> 
+        </div>
     </div>
   )
 }
