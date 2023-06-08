@@ -48,9 +48,12 @@ export default function Book() {
                 return <BookDisplay handleReviews={handleReviews} handleCart={handleCart} id={b.id} image={b.book_image} author={b.author} title={b.title} />  
             })}
          </div>
-        {cart.map((b) => {
-                return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>  
-        })}  
+         <div className='row'>
+            <h4>Books on Cart</h4>
+            {cart.map((b) => {
+                    return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} title={b.title}/>  
+            })}  
+        </div>
         </div>
   )
 }
