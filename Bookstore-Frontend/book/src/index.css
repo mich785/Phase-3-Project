@@ -18,7 +18,8 @@ code {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: black;
+  color: black; 
+  text-align: center;
   padding-top:7%; 
   font-family: 'Gabriela', serif;
 }
