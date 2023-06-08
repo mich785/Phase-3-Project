@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../Styles/reviews.css";
 import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar'
 
 function Reviews() {
     const [name, setName] = useState("");
@@ -28,7 +29,7 @@ function Reviews() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (name && email && bookId && review) {
+        if ( review) {
             const newReview = { name: name, review: review, likes: 0, bookId: bookId };
             setReviews([...reviews, newReview]);
             setReview("");
@@ -45,6 +46,8 @@ function Reviews() {
     }
 
     return ( 
+        <>
+        <Navbar/>
       <div className = "reviews-container">
         <div className = "review-form">
         <h2 className = "title"> Leave a review </h2> 
@@ -58,7 +61,7 @@ function Reviews() {
               (e) => setReview(e.target.value) }/>
 
           <input type = "text"
-          // placeholder="Your name ..."
+           placeholder="Your user name ..."
           value = { name }
           onChange = {
               (e) => setName(e.target.value) }
@@ -104,6 +107,7 @@ function Reviews() {
         </div> 
         </div> 
         </div>
+        </>
     );
 }
 

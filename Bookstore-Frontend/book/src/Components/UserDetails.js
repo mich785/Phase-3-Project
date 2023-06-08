@@ -15,14 +15,14 @@ function UserDetails() {
         event.preventDefault();
         
         const userDetails = {
-           // name: name,
+            name: name,
             //dateOfBirth: dateOfBirth,
             userName: userName,
             email: email,
             mobile: mobile,
         };
 
-        fetch("http://localhost:9292", {
+        fetch("http://localhost:9292/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -71,7 +71,7 @@ function UserDetails() {
         className = "form">
         <p> Let 's get you started</p> 
         <h3> Register Your Account </h3> {
-            /* <label>
+             <label>
                                 <input
                                     type="text"
                                     name="name"
@@ -79,7 +79,7 @@ function UserDetails() {
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                 />
-                                </label> */
+                                </label> 
         } {
             /* <label>
                                 <input
