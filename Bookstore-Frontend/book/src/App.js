@@ -6,6 +6,7 @@ import Home from "./Components/Home";
 import Reviews from "./Components/Reviews";
 import Book from "./Components/Book"
 import BookDisplay from "./Components/BookDisplay";
+import Cart from "./Components/Cart";
 
 export default function App() {
     return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path = "/reviews" element = {< Reviews/>}/> 
           <Route path = "/book" element = {<Book/>}/> 
           <Route path = "/bookdisplay" element = {<BookDisplay/>}/> 
+          <Route path = "/cart" element = {<Cart/>}/> 
          </Routes> 
       </BrowserRouter>
     )
