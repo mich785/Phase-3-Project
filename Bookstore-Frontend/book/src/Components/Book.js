@@ -31,25 +31,21 @@ export default function Book() {
   }
 
   return (
-    <>
-      <Navbar />
-      <div className='container p-4'>
-        <Header />
-        <BookSearch />
-        <div className='row'>
-          {book.map((b) => (
-            <BookDisplay
-              key={b.id}
-              handleReviews={handleReviews}
-              handleCart={handleCart}
-              id={b.id}
-              image={b.book_image}
-              author={b.author}
-              title={b.title}
-            />
-          ))}
+    <div className='container p-4'> 
+            <Header/> 
+            <BookSearch />
+         <div className='row'>
+            <h4>Books on Cart</h4>
+            {cart.map((b) => {
+                    return <Cart id={b.id} amazon={b.amazon_product_url} image={b.book_image} description={b.description} author={b.author} publisher={b.publisher} title={b.title}/>  
+            })}  
         </div>
-      </div>
-    </>
-  );
+
+        <div className='row'> 
+            {book.map((b) => { 
+                return <BookDisplay handleReviews={handleReviews} handleCart={handleCart} id={b.id} image={b.book_image} author={b.author} title={b.title} />  
+            })}
+         </div>
+        </div>
+  )
 }
