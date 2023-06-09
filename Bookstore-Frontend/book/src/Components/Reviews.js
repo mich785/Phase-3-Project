@@ -28,8 +28,8 @@ function Reviews() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (name && email && bookId && review) {
-            const newReview = { name: name, review: review, likes: 0, bookId: bookId };
+        if (review ) { 
+            const newReview = { review: review, likes: 0, bookId: bookId };
             setReviews([...reviews, newReview]);
             setReview("");
         } else {
@@ -65,20 +65,7 @@ function Reviews() {
           // Added readOnly attribute to prevent editing 
           />
 
-          <input type = "email"
-          placeholder = "Your email ..."
-          value = { email }
-          onChange = {
-              (e) => setEmail(e.target.value) }
-           // Added readOnly attribute to prevent editing
-          />
-
-          <input type = "number"
-          // placeholder="Book ID ..."
-          value = { bookId }
-          onChange = {
-              (e) => setBookId(e.target.value) }
-           />
+         
           <br/>
           <button type = "submit" className = "submit">Submit </button> 
        </form>
