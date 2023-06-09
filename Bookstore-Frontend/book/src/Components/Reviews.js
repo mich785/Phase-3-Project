@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../Styles/Reviews.css";
-import { useNavigate } from "react-router-dom";
 
 function Reviews() {
     const [name, setName] = useState("");
@@ -12,31 +11,53 @@ function Reviews() {
     const navigate = useNavigate();
     const { bookId: paramBookId } = useParams();
 
-
     useEffect(() => {
-        // Fetch book data from database 
-        fetch(`http://localhost:9292/book/${paramBookId}`)
+        // Fetch reviews for the specific book from the database
+        fetch(`http://localhost:9292/book/${paramBookId}/reviews`)
             .then((response) => response.json())
             .then((data) => {
-                setBookId(data.id);
+                setBookId(data.bookId);
+                setReviews(data.reviews);
             })
             .catch((error) => {
-                console.log("Error retrieving book data", error);
+                console.log("Error retrieving reviews", error);
             });
     }, [paramBookId]);
 
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (name && email && bookId && review) {
+        if (review !== "") {
             const newReview = { name: name, review: review, likes: 0, bookId: bookId };
-            setReviews([...reviews, newReview]);
+
+            fetch("http://localhost:9292/reviews", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(newReview),
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        return fetch(`http://localhost:9292/book/${paramBookId}/reviews`);
+                    } else {
+                        throw new Error("Error submitting review to the API");
+                    }
+                })
+                .then((reviewsResponse) => reviewsResponse.json())
+                .then((reviewsData) => {
+                    setReviews(reviewsData);
+                })
+                .catch((error) => {
+                    alert("Error submitting review to the API", error);
+                });
+
             setReview("");
         } else {
-            console.log("Please provide all required information.");
+            alert("Please provide all required information to leave a review.");
         }
-        navigate("/book")
     }
+
 
     function handleLikes(index) {
         const likedReviews = [...reviews];
@@ -56,7 +77,6 @@ function Reviews() {
         <
         textarea rows = { 5 }
         cols = { 50 }
-        // placeholder="What was your experience?"
         value = { review }
         onChange = {
             (e) => setReview(e.target.value) }
@@ -64,33 +84,27 @@ function Reviews() {
 
         <
         input type = "text"
-        // placeholder="Your name ..."
         value = { name }
+        placeholder = "Your name"
         onChange = {
             (e) => setName(e.target.value) }
-        readOnly // Added readOnly attribute to prevent editing
-        /
-        >
+        />
 
         <
         input type = "email"
-        placeholder = "Your email ..."
         value = { email }
+        placeholder = "Your email"
         onChange = {
             (e) => setEmail(e.target.value) }
-        readOnly // Added readOnly attribute to prevent editing
-        /
-        >
+        />
 
         <
         input type = "number"
-        // placeholder="Book ID ..."
         value = { bookId }
+        placeholder = "Book ID"
         onChange = {
             (e) => setBookId(e.target.value) }
-        readOnly /
-        >
-        <
+        /> <
         br / >
         <
         button type = "submit"

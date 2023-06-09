@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function BookDisplay({ image, author, title, id, handleCart, handleReviews }) {
+function BookDisplay({ image, author, title, id, handleCart, handleReviews }) {
     return ( <
         div className = "col-2 card m-3"
         key = { id } >
@@ -26,3 +26,4 @@ export default function BookDisplay({ image, author, title, id, handleCart, hand
         /div>
     )
 }
+export default BookDisplay;

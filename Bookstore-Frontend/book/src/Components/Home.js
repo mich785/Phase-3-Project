@@ -10,13 +10,13 @@ function Home() {
         div className = "home" >
         <
         br / >
-        <
-        h1 > Booknest < /h1> <
+        BookNest <
         hr / >
         <
         h1 > Welcome to the Home Page < /h1>
 
-        b < br / >
+        <
+        br / >
         <
         br / >
         <
