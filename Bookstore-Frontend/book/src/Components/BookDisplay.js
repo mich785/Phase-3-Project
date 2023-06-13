@@ -1,7 +1,18 @@
 import React from 'react'
+import "../Styles/floatingbutton.css";
+
+function FloatingCartButton({ itemCount,id,handleCart }) {
+  return (
+      <div>
+        <div class="floating-button">
+        <button type="button" onClick={() => handleCart(id)}>Books in cart</button>
+</div>
+      </div>
+  );
+}
 
 export default function BookDisplay({image,author,title,id,handleCart,handleReviews}) {
-  return (
+  return (<>
             <div className="col-2 card m-3" key={id}>  
                 <img className="card-img-top img-thumbnail" src={image} alt="cover"/>
                 <div className="card-body">
@@ -11,5 +22,6 @@ export default function BookDisplay({image,author,title,id,handleCart,handleRevi
                 <button type="button" onClick={() => handleReviews(id)}  className="btn btn-outline-success m-2">Reviews</button>
                 </div>
             </div>
+            </>
   )
 }

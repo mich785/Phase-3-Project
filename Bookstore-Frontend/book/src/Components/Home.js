@@ -2,17 +2,13 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import "../Styles/home.css"
+import Header from "./Header";
 
 function Home() {
     return ( 
       <div >
         <div className = "home" >
-        <br/>
-        <h1> Booknest </h1> 
-        <hr/>
-        <h1> Welcome to the Home Page </h1>
-
-       <br/> 
+        <Header/>
         <br/>
         <LoginPage/>
         <div className = "alternative" >

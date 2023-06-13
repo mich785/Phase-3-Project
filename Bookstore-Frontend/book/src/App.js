@@ -7,10 +7,12 @@ import Reviews from "./Components/Reviews";
 import Book from "./Components/Book"
 import BookDisplay from "./Components/BookDisplay";
 import Cart from "./Components/Cart";
+import Navbar from "./Components/Navbar";
 
 export default function App() {
     return (
     <BrowserRouter>
+    <Navbar />
         <Routes >
           <Route path = "/signup" element = {<SignUp/>}/> 
           <Route path = "/login" element = {<LoginPage/>}/> 
